@@ -11,6 +11,6 @@ suite('Home page', function() {
   test('Products count', async function() {
     let res = await fetch("https://stilian-matev-regular-exam.onrender.com/");
     let body = await res.text();
-    assert.ok(body.includes("Cookbook: <b>3</b>"));
+    assert.ok(body.includes("Cookbook: <b>3</b>")); 
   });
 });
