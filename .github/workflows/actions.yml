@@ -1,0 +1,29 @@
+name: Build and test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-tests:
+
+    runs-on: ubuntu-latest
+
+    
+       
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - name: install project dependencies
+      run: npm install
+    - name: run unit tests for the application
+      run: npm run test:unit
+    - name: display softuni username
+      run: echo "stilianmatev"
